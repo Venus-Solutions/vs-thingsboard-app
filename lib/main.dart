@@ -3,11 +3,14 @@ import 'package:universal_platform/universal_platform.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+
 import 'package:thingsboard_app/config/routes/router.dart';
 import 'package:thingsboard_app/core/context/tb_context.dart';
 import 'package:thingsboard_app/modules/dashboard/main_dashboard_page.dart';
 import 'package:thingsboard_app/widgets/two_page_view.dart';
+import 'package:thingsboard_app/constants/app_constants.dart';
 
 import 'config/themes/tb_theme.dart';
 
@@ -130,14 +133,14 @@ class ThingsboardAppState extends State<ThingsboardApp> with TickerProviderState
         systemNavigationBarIconBrightness: Brightness.light
     ));
     return MaterialApp(
-      title: 'ThingsBoard',
+      title: ThingsboardAppConstants.appName,
         themeMode: ThemeMode.light,
         home: TwoPageView(
           controller: _mainPageViewController,
           first: MaterialApp(
             key: mainAppKey,
             scaffoldMessengerKey: appRouter.tbContext.messengerKey,
-            title: 'ThingsBoard',
+            title: ThingsboardAppConstants.appName,
             theme: tbTheme,
             themeMode: ThemeMode.light,
             darkTheme: tbDarkTheme,
@@ -147,7 +150,7 @@ class ThingsboardAppState extends State<ThingsboardApp> with TickerProviderState
           second: MaterialApp(
             key: dashboardKey,
             // scaffoldMessengerKey: appRouter.tbContext.messengerKey,
-            title: 'ThingsBoard',
+            title: ThingsboardAppConstants.appName,
             theme: tbTheme,
             themeMode: ThemeMode.light,
             darkTheme: tbDarkTheme,
