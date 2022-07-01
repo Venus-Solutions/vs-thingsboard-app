@@ -73,14 +73,14 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                           SvgPicture.asset(ThingsboardImage.thingsBoardWithTitle,
                                               height: 25,
                                               color: Theme.of(context).primaryColor,
-                                              semanticsLabel: 'ThingsBoard Logo')
+                                              semanticsLabel: 'Tony Space Logo')
                                         ]
                                     ),
                                     SizedBox(height: 32),
                                     Row(
                                         children: [
                                           Text(
-                                              'Login to your account',
+                                              'เข้าสู่ระบบ Tony Space',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 28,
@@ -113,12 +113,12 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                             FormBuilderTextField(
                                               name: 'username',
                                               validator: FormBuilderValidators.compose([
-                                                FormBuilderValidators.required(context, errorText: 'Email is required.'),
-                                                FormBuilderValidators.email(context, errorText: 'Invalid email format.')
+                                                FormBuilderValidators.required(context, errorText: 'กรุณาป้อนอีเมล'),
+                                                FormBuilderValidators.email(context, errorText: 'ป้อนอีเมลไม่ถูกต้อง')
                                               ]),
                                               decoration: InputDecoration(
                                                   border: OutlineInputBorder(),
-                                                  labelText: 'Email'
+                                                  labelText: 'อีเมล'
                                               ),
                                             ),
                                             SizedBox(height: 28),
@@ -129,7 +129,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                     name: 'password',
                                                     obscureText: !showPassword,
                                                     validator: FormBuilderValidators.compose([
-                                                      FormBuilderValidators.required(context, errorText: 'Password is required.')
+                                                      FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่าน')
                                                     ]),
                                                     decoration: InputDecoration(
                                                         suffixIcon: IconButton(
@@ -139,7 +139,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                           },
                                                         ),
                                                         border: OutlineInputBorder(),
-                                                        labelText: 'Password'
+                                                        labelText: 'รหัสผ่าน'
                                                     ),
                                                   );
                                                 }
@@ -155,7 +155,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                             _forgotPassword();
                                           },
                                           child: Text(
-                                            'Forgot Password?',
+                                            'ลืมรหัสผ่าน?',
                                             style: TextStyle(color: Theme.of(context).colorScheme.primary,
                                                 letterSpacing: 1,
                                                 fontSize: 12,
@@ -166,7 +166,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                     ),
                                     Spacer(),
                                     ElevatedButton(
-                                      child: Text('Log In'),
+                                      child: Text('เข้าสู่ระบบ'),
                                       style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(vertical: 16)),
                                       onPressed: () {
                                         _login();
@@ -185,7 +185,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
               valueListenable: _isLoginNotifier,
               builder: (BuildContext context, bool loading, child) {
                 if (loading) {
-                  var data = MediaQueryData.fromWindow(WidgetsBinding.instance!.window);
+                  var data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
                   var bottomPadding = data.padding.top;
                   bottomPadding += kToolbarHeight;
                   return SizedBox.expand(

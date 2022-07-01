@@ -24,8 +24,8 @@ class TbWebAuth {
   });
 
   static Future<String> authenticate({required String url, required String callbackUrlScheme, bool? saveHistory}) async {
-    WidgetsBinding.instance?.removeObserver(_resumedObserver); // safety measure so we never add this observer twice
-    WidgetsBinding.instance?.addObserver(_resumedObserver);
+    WidgetsBinding.instance.removeObserver(_resumedObserver); // safety measure so we never add this observer twice
+    WidgetsBinding.instance.addObserver(_resumedObserver);
     return await _channel.invokeMethod('authenticate', <String, dynamic>{
       'url': url,
       'callbackUrlScheme': callbackUrlScheme,
@@ -35,6 +35,6 @@ class TbWebAuth {
 
   static Future<void> _cleanUpDanglingCalls() async {
     await _channel.invokeMethod('cleanUpDanglingCalls');
-    WidgetsBinding.instance?.removeObserver(_resumedObserver);
+    WidgetsBinding.instance.removeObserver(_resumedObserver);
   }
 }

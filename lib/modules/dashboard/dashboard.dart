@@ -381,7 +381,7 @@ class _DashboardState extends TbContextState<Dashboard> {
                                 if (!loading && active) {
                                   return SizedBox.shrink();
                                 } else {
-                                  var data = MediaQueryData.fromWindow(WidgetsBinding.instance!.window);
+                                  var data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
                                   var bottomPadding = data.padding.top;
                                   if (widget._home != true) {
                                     bottomPadding += kToolbarHeight;
