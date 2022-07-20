@@ -98,7 +98,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                               Flexible(child: Divider()),
                                               Padding(
                                                 padding: EdgeInsets.symmetric(horizontal: 16),
-                                                child: Text('OR'),
+                                                child: Text('หรือ'),
                                               ),
                                               Flexible(child: Divider())
                                             ],
