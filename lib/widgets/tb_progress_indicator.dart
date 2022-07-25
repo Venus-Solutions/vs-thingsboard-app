@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 import 'package:thingsboard_app/constants/assets_path.dart';
 
 class TbProgressIndicator extends ProgressIndicator {
@@ -62,16 +62,18 @@ class _TbProgressIndicatorState extends State<TbProgressIndicator> with SingleTi
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        SvgPicture.asset(ThingsboardImage.thingsboardCenter,
-            height: widget.size,
-            width: widget.size,
-            color: widget._getValueColor(context)),
+        Image.asset(TonySpaceImage.tonySpaceCenter,
+          height: widget.size,
+          width: widget.size,
+          // color: widget._getValueColor(context),
+        ),
         AnimatedBuilder(
           animation: _rotation,
-          child: SvgPicture.asset(ThingsboardImage.thingsboardOuter,
+          child: Image.asset(TonySpaceImage.tonySpaceOuter,
               height: widget.size,
               width: widget.size,
-              color: widget._getValueColor(context)),
+              // color: widget._getValueColor(context)
+          ),
           builder: (BuildContext context, Widget? child) {
             return Transform.rotate(
                 angle: _rotation.value * pi * 2,

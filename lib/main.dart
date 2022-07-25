@@ -1,3 +1,4 @@
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 import 'package:flutter/foundation.dart';
@@ -12,13 +13,15 @@ import 'package:thingsboard_app/modules/dashboard/main_dashboard_page.dart';
 import 'package:thingsboard_app/widgets/two_page_view.dart';
 import 'package:thingsboard_app/constants/app_constants.dart';
 
-import 'config/themes/tb_theme.dart';
+import 'config/themes/ts_theme.dart';
 
 final appRouter = ThingsboardAppRouter();
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  // FlutterNativeSplash.remove();
 //  await FlutterDownloader.initialize();
 //  await Permission.storage.request();
 
@@ -133,27 +136,30 @@ class ThingsboardAppState extends State<ThingsboardApp> with TickerProviderState
         systemNavigationBarIconBrightness: Brightness.light
     ));
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: ThingsboardAppConstants.appName,
         themeMode: ThemeMode.light,
         home: TwoPageView(
           controller: _mainPageViewController,
           first: MaterialApp(
+            debugShowCheckedModeBanner: false,
             key: mainAppKey,
             scaffoldMessengerKey: appRouter.tbContext.messengerKey,
             title: ThingsboardAppConstants.appName,
-            theme: tbTheme,
+            theme: tsTheme,
             themeMode: ThemeMode.light,
-            darkTheme: tbDarkTheme,
+            darkTheme: tsDarkTheme,
             onGenerateRoute: appRouter.router.generator,
             navigatorObservers: [appRouter.tbContext.routeObserver],
           ),
           second: MaterialApp(
+            debugShowCheckedModeBanner: false,
             key: dashboardKey,
             // scaffoldMessengerKey: appRouter.tbContext.messengerKey,
             title: ThingsboardAppConstants.appName,
-            theme: tbTheme,
+            theme: tsTheme,
             themeMode: ThemeMode.light,
-            darkTheme: tbDarkTheme,
+            darkTheme: tsDarkTheme,
             home: MainDashboardPage(appRouter.tbContext, controller: _mainDashboardPageController),
           )
         )

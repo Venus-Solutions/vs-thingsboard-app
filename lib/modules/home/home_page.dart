@@ -48,9 +48,14 @@ class _HomePageState extends TbContextState<HomePage> with AutomaticKeepAliveCli
         title: Center(
             child: Container(
                 height: 24,
-                child: SvgPicture.asset(ThingsboardImage.thingsBoardWithTitle,
-                    color: Theme.of(context).primaryColor,
-                    semanticsLabel: 'ThingsBoard Logo')
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(TonySpaceImage.tonySpace),
+                    SizedBox(width: 10.0),
+                    Text('Tony Space'),
+                  ],
+                )
             )
         ),
         actions: [

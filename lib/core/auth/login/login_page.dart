@@ -70,10 +70,13 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                   children: [
                                     Row(
                                         children: [
-                                          SvgPicture.asset(ThingsboardImage.thingsBoardWithTitle,
-                                              height: 25,
-                                              color: Theme.of(context).primaryColor,
-                                              semanticsLabel: 'Tony Space Logo')
+                                          // SvgPicture.asset(ThingsboardImage.thingsBoardWithTitle,
+                                          //     height: 25,
+                                          //     color: Theme.of(context).primaryColor,
+                                          //     semanticsLabel: 'Tony Space Logo'),
+                                          Image.asset(TonySpaceImage.tonySpace,
+                                              height: 50,
+                                          ),
                                         ]
                                     ),
                                     SizedBox(height: 32),

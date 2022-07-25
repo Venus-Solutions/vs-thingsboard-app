@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:requestLegacyExternalStorage="true"
-        android:label="ThingsBoard App"
+        android:label="Tony Space"
         android:networkSecurityConfig="@xml/network_security_config"
         android:icon="@mipmap/launcher_icon">
         <activity
@@ -46,7 +46,7 @@
         </activity>
 
         <activity android:name=".TbWebCallbackActivity" >
-            <intent-filter android:label="tb_web_auth">
+            <intent-filter android:label="Tony Space">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -64,3 +64,4 @@
                    android:resource="@xml/network_security_config"/>
     </application>
 </manifest>
+

@@ -14,3 +14,9 @@ abstract class ThingsboardImage {
   };
 
 }
+
+abstract class TonySpaceImage {
+  static final tonySpace = 'assets/images/tony_space_logo.png';
+  static final tonySpaceOuter = 'assets/images/tony_space_logo_outer.png';
+  static final tonySpaceCenter = 'assets/images/tony_space_logo_center.png';
+}
