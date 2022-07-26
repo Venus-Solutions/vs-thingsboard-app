@@ -35,10 +35,10 @@ const Map<AlarmStatus, String> alarmStatusTranslations = {
 mixin AlarmsBase on EntitiesBase<AlarmInfo, AlarmQuery> {
 
   @override
-  String get title => 'Alarms';
+  String get title => 'สัญญาณเตือน'; // Alarms
 
   @override
-  String get noItemsFoundText => 'No alarms found';
+  String get noItemsFoundText => 'ไม่พบสัญญาณเตือน'; // No alarms found
 
   @override
   Future<PageData<AlarmInfo>> fetchEntities(AlarmQuery query) {
@@ -102,7 +102,7 @@ class _AlarmCardState extends TbContextState<AlarmCard> {
   bool loading = false;
   AlarmInfo alarm;
 
-  final entityDateFormat = DateFormat('yyyy-MM-dd');
+  final entityDateFormat = DateFormat('dd-MM-yyyy'); // yyyy-MM-dd'
 
   _AlarmCardState(this.alarm): super();
 
