@@ -61,8 +61,8 @@ class _ResetPasswordRequestPageState extends TbPageState<ResetPasswordRequestPag
                                         name: 'email',
                                         autofocus: true,
                                         validator: FormBuilderValidators.compose([
-                                          FormBuilderValidators.required(context, errorText: 'กรุณาป้อนอีเมล'), // Email is required.
-                                          FormBuilderValidators.email(context, errorText: 'รูปแบบอีเมลไม่ถูกต้อง') //Invalid email format.
+                                          FormBuilderValidators.required(errorText: 'กรุณาป้อนอีเมล'), // Email is required.
+                                          FormBuilderValidators.email(errorText: 'รูปแบบอีเมลไม่ถูกต้อง') //Invalid email format.
                                         ]),
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),

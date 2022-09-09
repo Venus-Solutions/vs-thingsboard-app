@@ -116,8 +116,8 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                             FormBuilderTextField(
                                               name: 'username',
                                               validator: FormBuilderValidators.compose([
-                                                FormBuilderValidators.required(context, errorText: 'กรุณาป้อนอีเมล'),
-                                                FormBuilderValidators.email(context, errorText: 'ป้อนอีเมลไม่ถูกต้อง')
+                                                FormBuilderValidators.required(errorText: 'กรุณาป้อนอีเมล'),
+                                                FormBuilderValidators.email(errorText: 'ป้อนอีเมลไม่ถูกต้อง')
                                               ]),
                                               decoration: InputDecoration(
                                                   border: OutlineInputBorder(),
@@ -132,7 +132,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                     name: 'password',
                                                     obscureText: !showPassword,
                                                     validator: FormBuilderValidators.compose([
-                                                      FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่าน')
+                                                      FormBuilderValidators.required(errorText: 'กรุณาป้อนรหัสผ่าน')
                                                     ]),
                                                     decoration: InputDecoration(
                                                         suffixIcon: IconButton(

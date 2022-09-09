@@ -82,8 +82,8 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                             FormBuilderTextField(
                               name: 'email',
                               validator: FormBuilderValidators.compose([
-                                FormBuilderValidators.required(context, errorText: 'กรุณาป้อนอีเมล'), // Email is required.
-                                FormBuilderValidators.email(context, errorText: 'รูปแบบของอีเมลไม่ถูกต้อง') // Invalid email format.
+                                FormBuilderValidators.required(errorText: 'กรุณาป้อนอีเมล'), // Email is required.
+                                FormBuilderValidators.email(errorText: 'รูปแบบของอีเมลไม่ถูกต้อง') // Invalid email format.
                               ]),
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),

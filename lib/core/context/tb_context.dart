@@ -1,6 +1,8 @@
 import 'dart:async';
+
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:universal_platform/universal_platform.dart';
-import 'package:device_info/device_info.dart';
+
 import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -338,14 +340,14 @@ class TbContext {
   }
 
   bool _userForceFullscreen() {
-    return tbClient.getAuthUser()!.isPublic ||
+    return tbClient.getAuthUser()!.isPublic! ||
            (userDetails != null && userDetails!.additionalInfo != null &&
                userDetails!.additionalInfo!['defaultDashboardFullscreen'] == true);
   }
 
   bool isPhysicalDevice() {
     if (UniversalPlatform.isAndroid) {
-      return _androidInfo!.isPhysicalDevice;
+      return _androidInfo!.isPhysicalDevice!;
     } else if (UniversalPlatform.isIOS) {
       return _iosInfo!.isPhysicalDevice;
     } else {

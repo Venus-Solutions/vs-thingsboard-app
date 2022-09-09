@@ -22,7 +22,7 @@ mixin DashboardsBase on EntitiesBase<DashboardInfo, PageLink> {
     if (tbClient.isTenantAdmin()) {
       return tbClient.getDashboardService().getTenantDashboards(pageLink, mobile: true);
     } else {
-      return tbClient.getDashboardService().getCustomerDashboards(tbClient.getAuthUser()!.customerId, pageLink, mobile: true);
+      return tbClient.getDashboardService().getCustomerDashboards(tbClient.getAuthUser()!.customerId!, pageLink, mobile: true);
     }
   }
 

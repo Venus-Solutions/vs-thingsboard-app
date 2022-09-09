@@ -54,7 +54,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                   obscureText: !showPassword,
                                   autofocus: true,
                                   validator: FormBuilderValidators.compose([
-                                    FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่านปัจจุบัน') // Current password is required.
+                                    FormBuilderValidators.required(errorText: 'กรุณาป้อนรหัสผ่านปัจจุบัน') // Current password is required.
                                   ]),
                                   decoration: InputDecoration(
                                       suffixIcon: IconButton(
@@ -77,7 +77,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                     name: 'newPassword',
                                     obscureText: !showPassword,
                                     validator: FormBuilderValidators.compose([
-                                      FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่านใหม่') // New password is required.
+                                      FormBuilderValidators.required(errorText: 'กรุณาป้อนรหัสผ่านใหม่') // New password is required.
                                     ]),
                                     decoration: InputDecoration(
                                         suffixIcon: IconButton(
@@ -100,7 +100,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                     name: 'newPassword2',
                                     obscureText: !showPassword,
                                     validator: FormBuilderValidators.compose([
-                                      FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่านเพื่อยืนยัน') // New password again is required.
+                                      FormBuilderValidators.required(errorText: 'กรุณาป้อนรหัสผ่านเพื่อยืนยัน') // New password again is required.
                                     ]),
                                     decoration: InputDecoration(
                                         suffixIcon: IconButton(

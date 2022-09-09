@@ -16,7 +16,7 @@ mixin AssetsBase on EntitiesBase<AssetInfo, PageLink> {
     if (tbClient.isTenantAdmin()) {
       return tbClient.getAssetService().getTenantAssetInfos(pageLink);
     } else {
-      return tbClient.getAssetService().getCustomerAssetInfos(tbClient.getAuthUser()!.customerId, pageLink);
+      return tbClient.getAssetService().getCustomerAssetInfos(tbClient.getAuthUser()!.customerId!, pageLink);
     }
   }
 
