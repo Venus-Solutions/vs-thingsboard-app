@@ -46,7 +46,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
         backgroundColor: Colors.white,
         appBar: TbAppBar(
           tbContext,
-          title: const Text('Profile'),
+          title: const Text('โปรไฟล์'), // Profile
           actions: [
             IconButton(
                 icon: Icon(
@@ -82,12 +82,12 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                             FormBuilderTextField(
                               name: 'email',
                               validator: FormBuilderValidators.compose([
-                                FormBuilderValidators.required(context, errorText: 'Email is required.'),
-                                FormBuilderValidators.email(context, errorText: 'Invalid email format.')
+                                FormBuilderValidators.required(context, errorText: 'กรุณาป้อนอีเมล'), // Email is required.
+                                FormBuilderValidators.email(context, errorText: 'รูปแบบของอีเมลไม่ถูกต้อง') // Invalid email format.
                               ]),
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
-                                  labelText: 'Email *'
+                                  labelText: 'อีเมล *'
                               ),
                             ),
                             SizedBox(height: 24),
@@ -95,7 +95,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                               name: 'firstName',
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
-                                  labelText: 'First Name'
+                                  labelText: 'ชื่อ' // First Name
                               ),
                             ),
                             SizedBox(height: 24),
@@ -103,7 +103,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                               name: 'lastName',
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(),
-                                  labelText: 'Last Name'
+                                  labelText: 'นามสกุล' // Last Name
                               ),
                             ),
                             SizedBox(height: 24),
@@ -113,7 +113,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                                 onPressed: () {
                                   _changePassword();
                                 },
-                                child: Center(child: Text('Change Password'))
+                                child: Center(child: Text('เปลี่ยนรหัสผ่าน')) // Change Password
                             )
                           ]
                       ),

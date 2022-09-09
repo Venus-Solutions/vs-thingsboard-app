@@ -33,7 +33,7 @@ class _ResetPasswordRequestPageState extends TbPageState<ResetPasswordRequestPag
               backgroundColor: Colors.transparent,
               appBar: TbAppBar(
                 tbContext,
-                title: Text('Reset password'),
+                title: Text('เปลี่ยนรหัสผ่านใหม่'),
               ),
               body: Stack(
                 children: [
@@ -47,7 +47,8 @@ class _ResetPasswordRequestPageState extends TbPageState<ResetPasswordRequestPag
                                     crossAxisAlignment: CrossAxisAlignment.stretch,
                                     children: [
                                       SizedBox(height: 16),
-                                      Text('Enter the email associated with your account and we\'ll send an email with password reset link',
+                                      // Text('Enter the email associated with your account and we\'ll send an email with password reset link',
+                                      Text('ป้อนอีเมลที่ได้สมัครสมาชิกไว้กับ Tony Space\ ระบบจะส่งลิงก์สำหรับตั้งรหัสผ่านใหม่ไปยังอีเมล',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Color(0xFFAFAFAF),
@@ -60,17 +61,17 @@ class _ResetPasswordRequestPageState extends TbPageState<ResetPasswordRequestPag
                                         name: 'email',
                                         autofocus: true,
                                         validator: FormBuilderValidators.compose([
-                                          FormBuilderValidators.required(context, errorText: 'Email is required.'),
-                                          FormBuilderValidators.email(context, errorText: 'Invalid email format.')
+                                          FormBuilderValidators.required(context, errorText: 'กรุณาป้อนอีเมล'), // Email is required.
+                                          FormBuilderValidators.email(context, errorText: 'รูปแบบอีเมลไม่ถูกต้อง') //Invalid email format.
                                         ]),
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(),
-                                            labelText: 'Email *'
+                                            labelText: 'อีเมล *'
                                         ),
                                       ),
                                       Spacer(),
                                       ElevatedButton(
-                                        child: Text('Request password reset'),
+                                        child: Text('ร้องขอการตั้งรหัสผ่านใหม่'), // Request password reset
                                         style: ElevatedButton.styleFrom(padding: EdgeInsets.symmetric(vertical: 16)),
                                         onPressed: () {
                                           _requestPasswordReset();
@@ -114,7 +115,7 @@ class _ResetPasswordRequestPageState extends TbPageState<ResetPasswordRequestPag
         await Future.delayed(Duration(milliseconds: 300));
         await tbClient.sendResetPasswordLink(email);
         _isLoadingNotifier.value = false;
-        showSuccessNotification('Password reset link was successfully sent!');
+        showSuccessNotification('ระบบส่งลิงก์สำหรับตั้งรหัสใหม่ไปยังอีเมลเรียบร้อยแล้ว'); // Password reset link was successfully sent!
       } catch(e) {
         _isLoadingNotifier.value = false;
       }

@@ -38,7 +38,7 @@ class _DevicesListPageState extends TbPageState<DevicesListPage> {
         onSearch: (searchText) => _deviceQueryController.onSearchText(searchText),
       );
     } else {
-      String titleText = widget.deviceType != null ? widget.deviceType! : 'All devices';
+      String titleText = widget.deviceType != null ? widget.deviceType! : 'อุปกรณ์ทั้งหมด'; // All devices
       String? subTitleText;
       if (widget.active != null) {
         subTitleText = widget.active == true ? 'Active' : 'Inactive';

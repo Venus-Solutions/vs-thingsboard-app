@@ -18,10 +18,10 @@ mixin DeviceProfilesBase on EntitiesBase<DeviceProfileInfo, PageLink> {
   final RefreshDeviceCounts refreshDeviceCounts = RefreshDeviceCounts();
 
   @override
-  String get title => 'Devices';
+  String get title => 'อุปกรณ์'; // Devices
 
   @override
-  String get noItemsFoundText => 'No devices found';
+  String get noItemsFoundText => 'ไม่พบอุปกรณ์'; // No devices found
 
   @override
   Future<PageData<DeviceProfileInfo>> fetchEntities(PageLink pageLink) {
@@ -135,7 +135,7 @@ class _AllDevicesCardState extends TbContextState<AllDevicesCard> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text('All devices',
+                          Text('อุปกรณ์ทั้งหมด', // All devices'
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,

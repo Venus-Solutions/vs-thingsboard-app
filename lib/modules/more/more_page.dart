@@ -71,7 +71,7 @@ class _MorePageState extends TbContextState<MorePage> {
                               children: [
                                 Icon(Icons.logout, color: Color(0xFFE04B2F)),
                                 SizedBox(width: 34),
-                                Text('Log out',
+                                Text('ออกจากระบบ', // Log out
                                     style: TextStyle(
                                       color: Color(0xFFE04B2F),
                                         fontStyle: FontStyle.normal,

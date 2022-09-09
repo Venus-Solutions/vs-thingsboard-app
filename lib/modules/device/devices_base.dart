@@ -16,10 +16,10 @@ import 'package:thingsboard_client/thingsboard_client.dart';
 mixin DevicesBase on EntitiesBase<EntityData, EntityDataQuery> {
 
   @override
-  String get title => 'Devices';
+  String get title => 'อุปกรณ์';  // Devices
 
   @override
-  String get noItemsFoundText => 'No devices found';
+  String get noItemsFoundText => 'ไม่พบอุปกรณ์'; // No devices found
 
   @override
   Future<PageData<EntityData>> fetchEntities(EntityDataQuery dataQuery) {
@@ -93,7 +93,7 @@ class DeviceCard extends TbContextWidget {
 
 class _DeviceCardState extends TbContextState<DeviceCard> {
 
-  final entityDateFormat = DateFormat('yyyy-MM-dd');
+  final entityDateFormat = DateFormat('dd-MM-yyyy'); // yyyy-MM-dd
 
   late Future<DeviceProfileInfo> deviceProfileFuture;
 

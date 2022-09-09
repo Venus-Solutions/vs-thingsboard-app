@@ -31,7 +31,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
         backgroundColor: Colors.white,
         appBar: TbAppBar(
           tbContext,
-          title: const Text('Change Password'),
+          title: const Text('เปลี่ยนรหัสผ่าน'), // Change Password
         ),
         body: Stack(
           children: [
@@ -54,7 +54,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                   obscureText: !showPassword,
                                   autofocus: true,
                                   validator: FormBuilderValidators.compose([
-                                    FormBuilderValidators.required(context, errorText: 'Current password is required.')
+                                    FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่านปัจจุบัน') // Current password is required.
                                   ]),
                                   decoration: InputDecoration(
                                       suffixIcon: IconButton(
@@ -64,7 +64,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                         },
                                       ),
                                       border: OutlineInputBorder(),
-                                      labelText: 'Current password *'
+                                      labelText: 'รหัสผ่านปัจจุบัน *' // Current password
                                   ),
                                 );
                               }
@@ -77,7 +77,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                     name: 'newPassword',
                                     obscureText: !showPassword,
                                     validator: FormBuilderValidators.compose([
-                                      FormBuilderValidators.required(context, errorText: 'New password is required.')
+                                      FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่านใหม่') // New password is required.
                                     ]),
                                     decoration: InputDecoration(
                                         suffixIcon: IconButton(
@@ -87,7 +87,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                           },
                                         ),
                                         border: OutlineInputBorder(),
-                                        labelText: 'New password *'
+                                        labelText: 'รหัสผ่านใหม่ *' // New password
                                     ),
                                   );
                                 }
@@ -100,7 +100,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                     name: 'newPassword2',
                                     obscureText: !showPassword,
                                     validator: FormBuilderValidators.compose([
-                                      FormBuilderValidators.required(context, errorText: 'New password again is required.')
+                                      FormBuilderValidators.required(context, errorText: 'กรุณาป้อนรหัสผ่านเพื่อยืนยัน') // New password again is required.
                                     ]),
                                     decoration: InputDecoration(
                                         suffixIcon: IconButton(
@@ -110,7 +110,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                           },
                                         ),
                                         border: OutlineInputBorder(),
-                                        labelText: 'New password again *'
+                                        labelText: 'ยืนยันรหัสผ่าน *' // New password again
                                     ),
                                   );
                                 }
@@ -122,7 +122,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                 onPressed: () {
                                   _changePassword();
                                 },
-                                child: Center(child: Text('Change Password'))
+                                child: Center(child: Text('เปลี่ยนรหัสผ่าน')) // Change Password
                             )
                           ]
                       ),
@@ -158,7 +158,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
       String newPassword = formValue['newPassword'];
       String newPassword2 = formValue['newPassword2'];
       if (newPassword != newPassword2) {
-        showErrorNotification('Entered passwords must be same!');
+        showErrorNotification('กรุณาป้อนรหัสผ่านใหม่ให้ตรงกัน'); // Entered passwords must be same!
       } else {
         _isLoadingNotifier.value = true;
         try {
