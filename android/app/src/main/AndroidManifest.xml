@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TbWebCallbackActivity" >
+        <activity android:name=".TbWebCallbackActivity" android:exported="true">
             <intent-filter android:label="Tony Space">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

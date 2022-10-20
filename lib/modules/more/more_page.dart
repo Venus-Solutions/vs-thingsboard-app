@@ -25,9 +25,9 @@ class _MorePageState extends TbContextState<MorePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Icon(Icons.account_circle, size: 48, color: Color(0xFFAFAFAF)),
+                    // Icon(Icons.account_circle, size: 48, color: Color(0xFFAFAFAF)),
                     Spacer(),
                     IconButton(icon: Icon(Icons.settings, color: Color(0xFFAFAFAF)), onPressed: () async {
                       await navigateTo('/profile');
