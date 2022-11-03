@@ -24,7 +24,7 @@ class ThingsboardAppRouter {
       var settings = context!.settings;
       return Scaffold(
         appBar: AppBar(
-          title: Text('Not Found')
+          title: Text('ไม่พบหน้าที่ต้องการ')
         ),
         body: Center(
           child: Text('Route not defined: ${settings!.name}')
